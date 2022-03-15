@@ -1,0 +1,134 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    border: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+p, span {
+    font-size: 14px;;
+}
+
+.cont {
+    width: 500px;
+    height: 400px;
+    margin:0 auto;
+}
+
+.cont h1 {
+    text-align: center;
+}
+
+.signup {
+    position: relative;
+    width: 420px;
+    height: 300px;
+    display: block;
+    margin:0 auto;
+}
+
+.signup .signup-wrap{
+    position: absolute;
+    top:5%;
+    left:5%;
+}
+
+.signup ul {
+    width: 380px;
+    margin: 0 auto;
+    display: block;
+}
+
+input {
+    
+}
+
+/*****************************************
+                 input
+******************************************/
+.signup .input {
+    height: 150px;
+}
+
+.signup .input li input:first-child {
+    float: left;
+}
+.signup .input li input:last-child {
+    float: right;
+}
+
+input {
+    padding: 5px 5px;
+    margin-bottom: 8px;
+}
+
+input[type=tel],[type=email] {
+    width: 96.5%;
+}
+
+
+/*****************************************
+                 agree
+******************************************/
+.signup .agree {
+    height: 60px;
+}
+
+.signup .agree .agree_left {
+    float: left;
+    width: 30%;
+    height:60px;
+    display:inline;
+    
+}
+
+.signup .agree .agree_right {
+
+}
+
+.register {
+    border-radius: 6px;
+    background: rgb(83, 145, 226);
+    padding: 2px 8px;;
+    width:20px;
+    height:15px;
+    color: white;
+    font-weight: bold;
+}
+
+/*****************************************
+                 button
+******************************************/
+.signup .button {
+    margin-top:10px;
+}
+.signup .button input{
+    width: 48%;
+}
+
+.signup .button input {
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+.signup .button #register{
+    background: rgb(83, 145, 226);
+}
+
+.signup .button #signin{
+    background: rgb(112, 226, 83);
+
+}
+
+.signup .button input:last-child{
+    float:right;
+}
