@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+} 
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: unset;
+}
+
+
+ul li {
+    list-style: none;
+}
+
+
+/*********************
+        container
+**********************/
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 2fr 7fr 1.5fr;
+    grid-template-areas:
+        "nav nav"
+        "main sidebar"
+        "footer footer";
+    grid-gap: 0.2rem;
+    font-family: sans-serif;
+}
+/* #wrap {
+    max-width:1200px;
+    margin:0 auto;
+} */
+
+/*********************
+          nav
+**********************/
+nav {
+    background-color: #555;
+    grid-area: nav;
+    padding: 20px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    /* text-align: center; */
+    color:#fff;
+}
+
+nav #nav_wrap{
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-items: center; 
+    grid-template-columns: .5fr 1fr .5fr;
+    grid-template-areas:
+    "subscribe nav_title icon"
+}
+
+nav #title {
+    grid-area: nav_title;
+    color:#fff;
+    font-size:1.8em;
+}
+
+nav #subscribe{
+    grid-area: subscribe;
+}
+
+nav #icon {
+    grid-area: icon;
+}
+
+nav div {
+    color:#c7c7c7;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: black;
+}
+
+
+/*********************
+         main
+**********************/
+main {
+    grid-area: main;
+    padding-top: var(--main-padding);
+}
+
+main .main_container {
+    padding: 30px 30px;
+    max-width: 1200px;
+    margin:0 auto;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1.5fr 7fr;
+    grid-template-areas:
+        "main_title main_title"
+        "profilePhoto main_cont"
+}
+
+main #main_title {
+    grid-area: main_title;
+}
+
+main #main_title h1 {
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: -.02em;
+}
+
+main #main_title .date {
+    color: #a3a1a1;
+}
+
+main #main_title .date .author {
+    font-style: italic;
+}
+
+main #profilePhoto {
+    grid-area: profilePhoto;
+    max-width: 100%;
+    height: auto;
+
+}
+
+main #profilePhoto img {
+    width: 100%;
+    height: auto;
+}
+
+main #main_cont {
+    grid-area: main_cont;
+}
+
+main #main_cont .hightlight{
+    font-weight: bold;
+}
+
+
+/*****************************************
+                 sidebar
+******************************************/
+#sidebar {
+    padding: 30px 30px;
+    grid-area: sidebar;
+}
+
+#sidebar .title{
+    padding-bottom: 10px;
+}
+
+#sidebar ul li {
+    padding: .5em 0;
+}
+
+#sidebar ul li i {
+    padding-right:15px;
+}
+
+
+/*****************************************
+                 Footer
+******************************************/
+footer {
+    grid-area: footer;
+    background-color: #e3e3e3;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+footer img {
+    width: 25px;
+    height: 25px;
+}
+
+
+
+/*****************************************
+                MediaQuery
+******************************************/
+@media only screen and (max-width:550px) {
+.container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 1fr 0.5fr 0.4fr;
+    grid-template-areas:
+    "nav"
+    "main"
+    "sidebar"
+    "footer"
+    }
+
+main .main_container {
+grid-template-columns: 1fr;
+grid-template-rows: 1fr 2fr 3fr;
+grid-template-areas:
+    "main_title"
+    "profilePhoto"
+    "main_cont"
+}

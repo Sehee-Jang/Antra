@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+} 
+
+ul, li {
+    list-style: none;
+    /* padding-inline-start: 0; */
+}
+
+ul, li, p, span {
+    font-size: 14px;
+}
+
+.cont {
+    width: 500px;
+    height: 400px;
+    margin:0 auto;
+}
+
+.cont h1 {
+    text-align: center;
+}
+
+.signup {
+    position: relative;
+    width: 420px;
+    height: 300px;
+    display: block;
+    margin:0 auto;
+}
+
+.signup .signup-wrap{
+    position: absolute;
+    top:5%;
+    left:5%;
+}
+
+.signup ul {
+    width: 380px;
+    margin: 0 auto;
+    display: block;
+}
+
+.cont h1, .signup ul {
+    margin-bottom:20px;
+}
+
+.signup ul:last-child{
+    margin-bottom:0;
+}
+/*****************************************
+                 input
+******************************************/
+.signup .input {
+    height: 150px;
+}
+
+.signup .input li input:first-child {
+    float: left;
+}
+.signup .input li input:last-child {
+    float: right;
+}
+
+input {
+    padding: 5px 5px;
+    margin-bottom: 8px;
+}
+
+input[type=tel],[type=email] {
+    width: 100%;
+}
+
+
+/*****************************************
+                 agree
+******************************************/
+.signup .agree {
+    height: 60px;
+}
+
+.signup .agree .agree_left {
+    float: left;
+    width: 22%;
+    height:60px;
+    display:inline;
+    
+}
+
+.signup .agree .agree_right {
+
+}
+
+.register {
+    border-radius: 4px;
+    background: rgb(83, 145, 226);
+    padding: 2px 6px;
+    width:20px;
+    height:15px;
+    color: white;
+    font-weight: bold;
+}
+
+/*****************************************
+                 button
+******************************************/
+
+.signup .button input[type="submit"] {
+    cursor: pointer;
+}
+
+.signup .button input{
+    width: 48%;
+}
+
+.signup .button input {
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+.signup .button #register{
+    background: rgb(83, 145, 226);
+}
+
+.signup .button #signin{
+    background: rgb(112, 226, 83);
+
+}
+
+.signup .button input:last-child{
+    float:right;
+}
+
