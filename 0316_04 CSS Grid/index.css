@@ -1,0 +1,31 @@
+main {
+    background-color: purple;
+    padding: 10px;
+    width:100%;
+    margin:auto;
+}
+
+ul {
+    background-color:orange;
+    list-style: none;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px 200px;
+}
+
+li {
+    background-color: beige;
+    text-align: center;
+    width: 200px;
+    margin: 20px auto;
+}
+
+li:first-of-type{ /*first element of type li*/
+    grid-column: 1/ span 2; /*we will span 2 column*/
+}
+/*
+Manupulate
+*/

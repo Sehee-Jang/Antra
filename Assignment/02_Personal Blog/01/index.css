@@ -8,6 +8,8 @@
 
 a {
     text-decoration: none;
+    outline: none;
+    color: unset;
 }
 
 #wrap {
@@ -19,7 +21,7 @@ a {
         Header
 **********************/
 header {
-    background: #f1f1f1;
+    background: #555;
     position: sticky;
     top:0;
     left:0;
@@ -29,16 +31,16 @@ header {
 
 header h1{
     font-family: 'Times New Roman', Times, serif;
-    color:#333;
+    color:#fff;
     text-align:center;
-    letter-spacing: 0.02em;
+    letter-spacing: .034em;
 
 }
 
 header ul li {
-    border-radius: 4px;
+    /* border-radius: 4px;
     background: orange;
-    padding: 2px 6px;
+    padding: 2px 6px; */
     float: left;
     list-style: none;
 }
@@ -48,12 +50,12 @@ header ul li:last-child {
 }
 
 header ul li a {
-    color:white;
+    color:#cccccc;
     font-weight: bold;
 }
 
 header a:hover {
-    color: blue;
+    color: black;
 }
 
 

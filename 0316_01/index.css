@@ -1,0 +1,56 @@
+*, /*Universal*/
+*::before,
+*::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+} 
+/*Different browsers have different default size so this code resets it*/
+/*
+why before&after?
+
+*/
+
+/*box modle: different way to calculate whole item
+default: size of content*/
+/*css normalization*/
+
+
+div {
+    border: 1px solid black;
+    width: 300px;
+    height: 150px;
+    background-color: red;
+}
+
+.greeting {
+    background-color: aqua;
+}
+
+/* #first-div {
+    background-color: purple;
+} */
+
+
+/*pseudo selector*/
+div:hover {
+    background-color: brown;
+}
+
+/*id-div-div:hover*/
+
+p::before {
+    content: 'This is before';
+}
+
+/* div p {
+    background-color: red;
+} */
+
+/* div > p {
+    background-color: red;
+} */
+
+div[class^='g'] p { /*class start with letter g*/
+    background-color: orange;
+}

@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+} 
+
+p {
+    font-size: 10em;
+
+    /*
+    It means 10 times the size of the parent font
+    if you dont set the parent's font size, browser default font size
+    
+    font-size: 10rem: 
+    Relative to font-size of the root element
+
+    font-size: 10%;
+    Relative to the parent element (if parent font size is 10px, it will be 1px.)
+    */
+}
+
+div{
+    font-size: 10px;
+}
+
+/*
+How to make a responsitve design
+    1. Media query
+    2. 
+*/
+
+@media (min-width: 500px) and (max-widht:1000px) {
+
+}
+
+/*
+Desktop first vs Mobile first
+1. desktop first
+    more flexible
+    space is bigger, more features
+    more traditional approach
+2. mobile first: getting more trend
+
+3. How to decide between them?
+: based on your audiece or product
+
+*/
+
+/*
+    BEM: Blocks, Elements and Modifiers
+*/
