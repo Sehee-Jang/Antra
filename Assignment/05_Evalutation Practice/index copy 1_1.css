@@ -1,0 +1,101 @@
+/* CSS RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ul li {
+    list-style: none;
+}
+
+.box_container{
+    background-color:#a4152c;
+    width: 100%;
+    height: 600px;
+    padding: 10px;
+}
+
+
+#slider{
+    position: relative;
+    width: 1400px;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#slider .slide_cnt {
+    position: absolute;
+    width: 1400px;
+    height: 500px;
+    left: 0;
+    transition: left 0.5s;
+}
+
+#slider .slide_cnt .movie_item {
+    float:left;
+    width: 250px;
+    margin-right:70px;
+}
+
+.slide_cnt .movie_item img {
+   width: 100%;
+}
+
+#slider .slide_cnt .movie_item .movie_title {
+    /* position: absolute;
+    width: 90%;
+    top: 60%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    color: #fff;
+    font-weight: bold;
+}
+
+#slider .slide_cnt .movie_item .movie_info {
+    /* position: absolute;
+    width: 100%;
+    top: 83%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    color: #bdbdbd;
+}
+
+.btn {
+    position:relative;
+}
+.btn button {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    border: 0;
+    padding: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn .prev {
+    left: 5px;
+  }
+  
+.btn .next {
+    right: 5px;
+}
+
+
+  
+/*****************************************
+                MediaQuery
+******************************************/
+@media only screen and (max-width:550px) {
+    .slide_cnt {
+        /* grid-template-columns: 1fr; */
+    }
+
+    /* .prev,
+    .next {
+        top: 30%;
+    } */
+}

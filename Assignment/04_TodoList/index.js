@@ -9,27 +9,27 @@ const domSelectors = {
 // Data
 const title = "My To Do List";
 const submitText = "Add";
-let todos = [{
-    "userId": 1,
-    "id": 1,
-    "title": "Hit the Gym",
-    "completed": true
-}, {
-    "userId": 1,
-    "id": 2,
-    "title": "Pay bills",
-    "completed": false
-}, {
-    "userId": 1,
-    "id": 3,
-    "title": "Meet George",
-    "completed": true
-}, {
-    "userId": 1,
-    "id": 4,
-    "title": "Buy eggs",
-    "completed": false
-}]
+// let todos = [{
+//     "userId": 1,
+//     "id": 1,
+//     "title": "Hit the Gym",
+//     "completed": true
+// }, {
+//     "userId": 1,
+//     "id": 2,
+//     "title": "Pay bills",
+//     "completed": false
+// }, {
+//     "userId": 1,
+//     "id": 3,
+//     "title": "Meet George",
+//     "completed": true
+// }, {
+//     "userId": 1,
+//     "id": 4,
+//     "title": "Buy eggs",
+//     "completed": false
+// }]
 
 function addNewTodo(newTodo){
     // mutable: 복사본을 수정하면 원본도 수정됩니다.
@@ -38,9 +38,9 @@ function addNewTodo(newTodo){
     //     id:Math.random() * 100000
     // })
     // immutable:
-    todos = [...todos,{
-        ...newTodo
-        // id:Math.floor(Math.random() * 100000)
+    todos = [...todos, {
+        ...newTodo,
+        id: Math.floor(Math.random() * 100000)
     }]
 }
 
@@ -77,7 +77,7 @@ function generateHeaderContent(title, submitText) {
 
 function generateTodoItem(todo) {
     return `
-        <li id="todo-${todo.id}" class="todoList_content_row ${todo.completed ? 'checked' : ''}">
+        <li id="todo-${todo.id}" class="todoList_content_row ${todo.completed? 'checked' : ''}">
             <span class="todoList_content_item">${todo.title}</span>
             <button class="todoList_content_action">X</button>
         </li>
@@ -124,16 +124,13 @@ function setUpEvent() {
     document.querySelector(domSelectors.todoListContent).addEventListener('click', (e) => {
         if(isDeleteButton(e.target)) {
             const id = getTodoIdFromParent(e.target);
-
-            deletTodo(id).then(_ => {
-                deletTodo();
+            deleteTodo(id).then(_ => {
+                deletTodo(id);
                 renderTodoList(todos);
             })
-            renderTodoList(todos);
         } else if(isContentRowOrItem(e.target)) {
             // const id = e.target.id;
             let id = getTodoIdFromElement(e.target) ? getTodoIdFromElement(e.target) : getTodoIdFromParent(e.target)
-            console.log('id', id);
             toggleCompleteTodo(id)
             renderTodoList(todos);
         }
@@ -162,7 +159,7 @@ function isDeleteButton(element) {
 
 function isContentRowOrItem(element) {
     return element.classList.contains('todoList_content_row') 
-    ||     element.classList.contains('todoList_content_item') 
+        || element.classList.contains('todoList_content_item') 
 }
 
 // APIs
@@ -171,7 +168,7 @@ function getTodos(){
         .then((response) => response.json())       
 }
 
-function deletTodo(id){
+function deleteTodo(id){
     return fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
         method: 'DELETE',   
     });
@@ -179,20 +176,20 @@ function deletTodo(id){
 
 function addTodo(newTodo){
     return fetch('https://jsonplaceholder.typicode.com/todos', {
-    method: 'POST',
-    body: JSON.stringify(newTodo), // converting json obejct to json //create new todo
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-    },
+        method: 'POST',
+        body: JSON.stringify(newTodo), // converting json obejct to json //create new todo
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
     })
     .then((response) => response.json())
-    .then((json) => console.log(json));
+
 }
 
 // init
 renderHeader(title, submitText);
-getTodos().then(todos => {
-    todo = todos;
+getTodos().then(todosData => {
+    todos   = todosData;
     renderTodoList(todos);
 })
 

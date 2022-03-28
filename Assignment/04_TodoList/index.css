@@ -56,6 +56,10 @@ button {
     padding: 0px 20px;
 }
 
+.todoList_content .todoList_content_row.checked {
+    text-decoration: line-through;
+}
+
 .todoList_content .todoList_content_row:nth-child(odd) {
     background: #f9f9f9;
 }
